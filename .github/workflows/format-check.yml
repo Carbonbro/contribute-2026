@@ -1,0 +1,24 @@
+name: Format Check
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "roster.md"
+      - "participants/**"
+
+jobs:
+  format-check:
+    name: Validate roster.md entry
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+
+      - name: Check roster.md format
+        run: python3 .github/scripts/check_roster.py
+
+      - name: Check participant files format
+        run: python3 .github/scripts/check_participants.py
