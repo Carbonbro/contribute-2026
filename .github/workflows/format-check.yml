@@ -10,7 +10,7 @@ on:
 
 jobs:
   format-check:
-    name: Validate roster.md entry
+    name: Validate
     runs-on: ubuntu-latest
 
     steps:
